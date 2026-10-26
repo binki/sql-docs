@@ -84,7 +84,7 @@ Errors encountered in a `CATCH` block are treated like errors generated anywhere
 
 - If the stored procedure doesn't contain its own `TRY...CATCH` construct, the error returns control to the `CATCH` block associated with the `TRY` block that contains the `EXECUTE` statement.
 
-- If the stored procedure contains a `TRY...CATCH` construct, the error transfers control to the `CATCH` block in the stored procedure. When the `CATCH` block code finishes, control is passed back to the statement immediately after the `EXECUTE` statement that called the stored procedure.
+- If the stored procedure contains a `TRY...CATCH` construct, the error transfers control to the `CATCH` block in the stored procedure. When the `CATCH` block code finishes, control is passed to the statement immediately after the `CATCH` block. If there is no statement immediately after the `CATCH` block, control is passed back to the statement immediately after the `EXECUTE` statement that called the stored procedure.
 
 `GOTO` statements can't be used to enter a `TRY` or `CATCH` block. `GOTO` statements can be used to jump to a label inside the same `TRY` or `CATCH` block or to leave a `TRY` or `CATCH` block.
 
